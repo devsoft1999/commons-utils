@@ -18,8 +18,11 @@ jobs:
           distribution: 'temurin'
           server-id: github
           settings-path: ${{ github.workspace }}
-
+      - name: Debug who am I
+        run: echo "Actor: $GITHUB_ACTOR / Token starts with: ${GITHUB_TOKEN:0:4}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
       - name: Publish to GitHub Packages
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
