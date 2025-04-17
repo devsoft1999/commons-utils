@@ -10,9 +10,11 @@
   <name>commons-utils</name>
   <description>Shared utilities for all Spring Boot services</description>
 
-  <properties>
-    <java.version>17</java.version>
-  </properties>
+<properties>
+  <java.version>17</java.version>
+  <maven.compiler.source>17</maven.compiler.source>
+  <maven.compiler.target>17</maven.compiler.target>
+</properties>
 
   <dependencies>
     <!-- Optional: Spring stuff -->
@@ -22,11 +24,12 @@
       <version>3.2.5</version>
     </dependency>
   </dependencies>
-  <distributionManagement>
+<distributionManagement>
   <repository>
     <id>github</id>
-    <name>GitHub Package Registry</name>
+    <name>GitHub Packages</name>
     <url>https://maven.pkg.github.com/devsoft1999/commons-utils</url>
   </repository>
 </distributionManagement>
+
 </project>
