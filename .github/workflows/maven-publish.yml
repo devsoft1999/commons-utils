@@ -19,7 +19,9 @@ jobs:
           server-id: github
           settings-path: ${{ github.workspace }}
       - name: Debug who am I
-        run: echo "Actor: $GITHUB_ACTOR / Token starts with: ${GITHUB_TOKEN:0:4}"
+        run: |
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Token starts with: ${GITHUB_TOKEN:0:4}" 
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
       - name: Publish to GitHub Packages
